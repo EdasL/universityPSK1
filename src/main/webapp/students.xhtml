@@ -11,7 +11,7 @@
     <ol>
         <ui:repeat value="#{courseStudentsMyBatis.enrolledStudents}" var="enrolledStudent">
             <li>
-                <h:link value="#{enrolledStudent.name} #{enrolledStudent.lastname}" outcome="studentGrades?studentId=#{enrolledStudents.studentId}" />
+                #{enrolledStudent.name} #{enrolledStudent.lastname}
             </li>
         </ui:repeat>
     </ol>
