@@ -8,13 +8,20 @@
 <h:head/>
 <h:body>
     <h2>Students studiying #{courseStudentsMyBatis.course.name} course </h2>
-    <ol>
-        <ui:repeat value="#{courseStudentsMyBatis.enrolledStudents}" var="enrolledStudent">
-            <li>
-                #{enrolledStudent.name} #{enrolledStudent.lastname}
-            </li>
-        </ui:repeat>
-    </ol>
+    <h:form>
+        <ol>
+            <ui:repeat value="#{courseStudentsMyBatis.enrolledStudents}" var="enrolledStudent">
+                <li>
+                    #{enrolledStudent.name} #{enrolledStudent.lastname}
+
+                    <h:commandButton value="Remove" action="#{courseStudentsMyBatis.removeStudent}">
+                        <f:param name="courseId" value="#{courseStudentsMyBatis.course.id}" />
+                        <f:param name="studentId" value="#{enrolledStudent.studentId}" />
+                    </h:commandButton>
+                </li>
+            </ui:repeat>
+        </ol>
+    </h:form>
 
     <h2>All students</h2>
     <h:form>

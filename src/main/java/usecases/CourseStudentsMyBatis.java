@@ -93,4 +93,17 @@ public class CourseStudentsMyBatis {
         return "students?faces-redirect=true&courseId=" + this.course.getId();
     }
 
+    @Transactional
+    public String removeStudent() {
+        Map<String, String> requestParameters =
+                FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        Integer studentId = Integer.parseInt(requestParameters.get("studentId"));
+
+        courseStudents.setCoursesId(this.course.getId());
+        courseStudents.setStudentsStudentId(studentId);
+        courseStudentsMapper.delete(courseStudents);
+
+        return "students?faces-redirect=true&courseId=" + this.course.getId();
+    }
+
 }

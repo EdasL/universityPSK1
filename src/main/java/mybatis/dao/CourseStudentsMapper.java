@@ -21,4 +21,6 @@ public interface CourseStudentsMapper {
      * @mbg.generated Mon May 04 21:50:35 EEST 2020
      */
     List<CourseStudents> selectAll();
+
+    int delete(CourseStudents record);
 }

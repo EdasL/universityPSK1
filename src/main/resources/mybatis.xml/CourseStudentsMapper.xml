@@ -28,4 +28,8 @@
     select COURSES_ID, STUDENTS_STUDENT_ID
     from PUBLIC.COURSESTUDENTS
   </select>
+
+  <delete id="delete" parameterType="mybatis.model.CourseStudents">
+    delete from PUBLIC.COURSESTUDENTS WHERE COURSES_ID = #{coursesId,jdbcType=INTEGER} AND STUDENTS_STUDENT_ID = #{studentsStudentId,jdbcType=INTEGER};
+  </delete>
 </mapper>
