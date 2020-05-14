@@ -1,5 +1,6 @@
 package usecases;
 
+import decorators.HomePage;
 import entities.Course;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,5 +43,12 @@ public class CoursesList {
         this.coursesDAO.persist(course);
 
         return "index?faces-redirect=true";
+    }
+
+    @Inject
+    private HomePage homePage;
+
+    public String welcome() {
+        return homePage.welcome();
     }
 }
