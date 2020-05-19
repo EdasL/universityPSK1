@@ -12,4 +12,7 @@
     <decorators>
         <class>decorators.MainHomePageDecorator</class>
     </decorators>
+    <alternatives>
+        <class>services.AllUniversitiesCount</class>
+    </alternatives>
 </beans>

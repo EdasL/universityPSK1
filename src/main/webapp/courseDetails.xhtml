@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+<h:head/>
+<h:body>
+    <h2>#{updateCourseDetails.course.name}</h2>
+    <h:form>
+        <table>
+            <tr>
+                <td>Course name:</td>
+                <td>
+                    <h:inputText id="name" value="#{updateCourseDetails.course.name}" required="true"/>
+                </td>
+            </tr>
+        </table>
+        <h:commandButton value="Update" action="#{updateCourseDetails.updateCourse}"/>
+    </h:form>
+    <h:outputText value="Other user already modified this course - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+</h:body>
+</html>

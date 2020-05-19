@@ -2,6 +2,7 @@ package usecases;
 
 import decorators.HomePage;
 import entities.Course;
+import interceptors.LoggedInvocation;
 import lombok.Getter;
 import lombok.Setter;
 import persistence.CoursesDAO;

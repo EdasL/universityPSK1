@@ -1,5 +1,5 @@
 package services;
 
 public interface NumberGenerator {
-    Double generateAverage();
+    int generateUniversitiesCount();
 }
